@@ -12,4 +12,5 @@ test("Number Comparision", () => {
   expect(floatValue).toBeCloseTo(0.3, 5) 
 
   expect("developer").not.toMatch(/I/);
+   expect("developer").toMatch(/dev/);
 });
