@@ -14,3 +14,17 @@ test("Number Comparision", () => {
   expect("developer").not.toMatch(/I/);
    expect("developer").toMatch(/dev/);
 });
+
+
+describe.only("Array Matcher", ()=> {
+   it("Array Matcher", ()=> {
+     const toDoList = [
+        'Buy Groceries',
+        'Clean Room',
+        'Pay Utilities',
+        'Rent',
+        'Credit Card'
+    ]
+    expect(toDoList).toContain('Rent');
+   })
+})
