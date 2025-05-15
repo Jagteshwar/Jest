@@ -27,4 +27,14 @@ describe.only("Array Matcher", ()=> {
     ]
     expect(toDoList).toContain('Rent');
    })
+
+   it("Exception Matchers", ()=> {
+    function openInvalidFile() {
+        throw new Error('file not foumd')
+    }
+    expect(()=> openInvalidFile()).toThrow();
+    expect(()=> openInvalidFile()).toThrow(Error);
+    expect(()=> openInvalidFile()).toThrow('file not found');
+    expect(()=> openInvalidFile()).toThrow(/not found/);
+   })
 })
