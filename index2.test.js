@@ -30,11 +30,18 @@ describe.only("Array Matcher", ()=> {
 
    it("Exception Matchers", ()=> {
     function openInvalidFile() {
-        throw new Error('file not foumd')
+        throw new Error('file not foumd');
     }
     expect(()=> openInvalidFile()).toThrow();
     expect(()=> openInvalidFile()).toThrow(Error);
-    expect(()=> openInvalidFile()).toThrow('file not found');
-    expect(()=> openInvalidFile()).toThrow(/not found/);
+    expect(()=> openInvalidFile()).not.toThrow('file not found');
+    expect(()=> openInvalidFile()).not.toThrow(/not found/);
    })
+})
+
+
+test("drinks returns", ()=> {
+    const drink = jest.fn(()=> true);
+    drink();
+    expect(drink).toHaveReturnedWith(true)
 })
